@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+.body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+.signUp-wrapper {
+  width: 18vw;
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: 100vh;
+}
+.signUp-wrapper .flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-sec-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.7rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.6rem;
+}
+.form-sec > input {
+  background-color: #292929;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  transition: border 0.3s;
+  width: 18rem;
+  padding: 0.7rem;
+}
+.check {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0.4rem;
+  margin-top: 1rem;
+}
+.check > span {
+  font-size: 14px;
+  color: #7c7c7c;
+}
+.submit-btn {
+  transition: all 0.3s ease-out;
+  width: 100%;
+  padding: 0.6rem 0rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #5cb85c;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+.submit-btn:hover {
+  color: #5cb85c;
+  background-color: white;
+}
+.signUp-wrapper .green {
+  color: #5cb85c;
+  font-size: 14px;
+}
+.signUp-wrapper .small-text {
+  font-size: 14px;
+  color: #7c7c7c;
+}
+.signUp-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.signUp-title > span {
+  margin-bottom: 0.3rem;
+}
+.signUp-wrapper .brand-name {
+  color: #5cb85c;
+  font-size: 3rem;
+  font-family: "Single Day", cursive;
+}
+.signUp-title .create-acc {
+  margin-bottom: 2rem;
+}
+.error-display {
+  color: red;
+  display: block;
+  font-size: 12px;
+}
+.error-none {
+  display: none;
+}

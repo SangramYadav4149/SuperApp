@@ -1,0 +1,20 @@
+.banner-wrapper {
+  width: max-content;
+}
+.banner-img {
+  width: 100%;
+  position: relative;
+}
+.banner-img > img {
+  width: 50vw;
+  height: 100vh;
+}
+.banner-title {
+  width: 50vw;
+  position: absolute;
+  color: white;
+  bottom: 3rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
