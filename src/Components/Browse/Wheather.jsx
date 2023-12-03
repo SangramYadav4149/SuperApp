@@ -5,31 +5,15 @@ import { FaTemperatureQuarter } from "react-icons/fa6";
 import { FaWind } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
 import "./Wheather.css";
+import { getDate, getTime } from "../GetTimeAndDate/GetTimeAndDate";
 const News = () => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const [wheather, setWheather] = useState({});
 
   const getTimeAndDate = () => {
-    const date = new Date();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? "pm" : "am";
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    var strTime = hours + ":" + minutes + " " + ampm;
-    setTime(strTime);
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0!
-    let dd = today.getDate();
-
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
-
-    const formattedToday = dd + "-" + mm + "-" + yyyy;
-    setDate(formattedToday);
+    setDate(getDate());
+    setTime(getTime());
   };
 
   const fetchNewsApi = async () => {

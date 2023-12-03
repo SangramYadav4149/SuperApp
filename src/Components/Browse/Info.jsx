@@ -1,7 +1,7 @@
 import React from "react";
 import "./Info.css";
 import img from "../../Assets/profileBig.png";
-const info = () => {
+const Info = () => {
   const userInfo = localStorage.getItem("userInfo");
   return (
     <section className="info-wrapper">
@@ -27,4 +27,4 @@ const info = () => {
   );
 };
 
-export default info;
+export default Info;

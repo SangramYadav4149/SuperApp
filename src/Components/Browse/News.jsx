@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./News.css";
 import axios from "axios";
+import { getDate, getTime } from "../GetTimeAndDate/GetTimeAndDate";
 const News = () => {
-  const fetchNews = async () => {};
-  fetchNews();
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
+  const getTimeAnddate = () => {
+    setDate(getDate());
+    setTime(getTime());
+  };
+  useEffect(() => {
+    getTimeAnddate();
+  }, []);
 
   //https://images.indianexpress.com/2023/05/Yaashi-singh.jpg
   return (
@@ -16,18 +24,21 @@ const News = () => {
           />
         </div>
         <div className="some-desc">
-          <span>Want to climb Mount Everest ?</span>
+          <span className="sm-title">Want to climb Mount Everest ?</span>
           <div className="news-time-date">
-            <span>2-20-2023</span>
+            <span className="news-time">{date}</span>
             <span className="line"></span>
-            <span>7:35PM</span>
+            <span className="news-date">{time}</span>
           </div>
         </div>
         <div className="full-desc">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nisi
           sint eligendi quos atque maiores animi aspernatur itaque perferendis
           architecto Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Aperiam nisi.
+          Aperiam nisi Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aperiam nisi sint eligendi quos atque maiores animi aspernatur itaque
+          perferendis architecto Lorem ipsum dolor sit amet consectetur
+          adipisicing.
         </div>
       </div>
     </section>
