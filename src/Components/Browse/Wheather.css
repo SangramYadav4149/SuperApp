@@ -1,0 +1,72 @@
+.wheather-wrapper {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wheather-container {
+  width: 35rem;
+  /*  display: flex;
+  flex-direction: column; */
+}
+.wheather-container .time-date {
+  width: 100%;
+  background-color: #ff4ade;
+  height: 5rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.time-date > span {
+  width: max-content;
+}
+.wheather-container .w-info {
+  background-color: #101744;
+  width: 100%;
+  height: 10rem;
+  border-radius: 0px 0px 20px 20px;
+}
+.w-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 140px max-content 210px max-content 150px;
+  justify-content: center;
+  align-items: center;
+}
+.w-info .line {
+  height: 50%;
+  margin: auto 0.5rem;
+  width: 2px;
+  background-color: aliceblue;
+  margin-left: -2rem;
+}
+.wheather-container .box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cel {
+  font-size: 3rem;
+  width: 100%;
+  margin-left: 1.5rem;
+}
+.wind {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.humi {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0rem;
+}
