@@ -1,0 +1,21 @@
+.note-wrapper {
+  width: max-content;
+}
+.note-container {
+  width: max-content;
+  position: relative;
+}
+.note-container > textarea {
+  background-color: #f1c75b;
+  padding-top: 4rem;
+  overflow: auto;
+  border-radius: 20px;
+  border: none;
+}
+.note-container > label {
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  left: 5rem;
+  font-size: 1.8rem;
+}

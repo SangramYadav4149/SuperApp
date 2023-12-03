@@ -1,0 +1,130 @@
+.info-wheather-wrapper {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.info-wheather-wrapper .info-wrapper {
+  width: max-content;
+}
+
+.info-wheather-wrapper .info-container {
+  width: 33rem;
+  height: 9.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5746ea;
+  column-gap: 2rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+.info-wheather-wrapper .user-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.info-wheather-wrapper.user-info .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2rem;
+}
+.info-wheather-wrapper .info-container .img > img {
+  width: 4.5rem;
+}
+.info-wheather-wrapper .container .name {
+  font-size: 1.1rem;
+}
+.info-wheather-wrapper .container .email {
+  font-size: 1.1rem;
+}
+
+.info-wheather-wrapper .container .userName {
+  font-size: 1.5rem;
+}
+.info-wheather-wrapper .container-cate {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.info-wheather-wrapper .container-cate .cate {
+  width: 100%;
+  font-size: 0.8rem;
+  background-color: #9f94ff;
+  border-radius: 20px;
+  padding: 0.5rem 0rem;
+
+  text-align: center;
+}
+
+.info-wheather-wrapper .wheather-wrapper {
+  width: max-content;
+}
+.wheather-container {
+  width: 35rem;
+  /*  display: flex;
+  flex-direction: column; */
+}
+.info-wheather-wrapper .wheather-container .time-date {
+  width: 100%;
+  background-color: #ff4ade;
+  height: 3rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.time-date > span {
+  width: max-content;
+}
+.info-wheather-wrapper .wheather-container .w-info {
+  background-color: #101744;
+  width: 100%;
+  height: 6rem;
+  border-radius: 0px 0px 20px 20px;
+}
+.w-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 140px max-content 210px max-content 150px;
+  justify-content: center;
+  align-items: center;
+}
+.w-info .line {
+  height: 50%;
+  margin: auto 0.5rem;
+  width: 2px;
+  background-color: aliceblue;
+  margin-left: -2rem;
+}
+.wheather-container .box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info-wheather-wrapper .cel {
+  font-size: 2rem;
+  width: 100%;
+  margin-left: 1.5rem;
+}
+.wind {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.humi {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0rem;
+}

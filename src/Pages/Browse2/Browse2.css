@@ -1,0 +1,18 @@
+.browse2-wrapper {
+  width: 100%;
+}
+.browse2-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  column-gap: 1rem;
+  justify-content: center;
+  align-items: start;
+  padding-top: 1rem;
+}
+.timer {
+  margin-top: -13.7rem;
+}
+.browse2-container .news {
+  margin-left: 2rem;
+}

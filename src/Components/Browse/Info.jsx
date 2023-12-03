@@ -2,7 +2,11 @@ import React from "react";
 import "./Info.css";
 import img from "../../Assets/profileBig.png";
 const Info = () => {
-  const userInfo = localStorage.getItem("userInfo");
+  const allCat = localStorage.getItem("chosenCategories");
+  let userChosenCategory = allCat.split(",");
+
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
   return (
     <section className="info-wrapper">
       <div className="info-container">
@@ -11,15 +15,18 @@ const Info = () => {
         </div>
         <div className="user-info">
           <div className="container">
-            <span className="name">Rishieksh ghosh</span>
-            <span className="email">rishikeshghosh@gmail.com</span>
-            <span className="userName">Rishikeh</span>
+            <span className="name">{userInfo.name}</span>
+            <span className="email">{userInfo.mail}</span>
+            <span className="userName">{userInfo.userName}</span>
           </div>
           <div className="container-cate">
-            <span className="cate">Horror</span>
-            <span className="cate">Thirler</span>
-            <span className="cate">Action</span>
-            <span className="cate">Fiction</span>
+            {userChosenCategory.map((category, i) => {
+              return (
+                <span key={i} className="cate">
+                  {category}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>

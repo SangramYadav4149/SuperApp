@@ -69,7 +69,8 @@ const Category = () => {
     if (chosenCategories.length < 3) {
       setNotValid(true);
     } else {
-      navigate("/");
+      localStorage.setItem("chosenCategories", chosenCategories);
+      navigate("/Browse");
     }
   };
 

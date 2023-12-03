@@ -38,7 +38,7 @@ const SignUp = () => {
       };
       localStorage.setItem("userInfo", JSON.stringify(userData));
 
-      navigate("/hero");
+      navigate("/Category");
     }
   };
   const handleResetError = () => {
