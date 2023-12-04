@@ -11,6 +11,9 @@ const InfoPlusWheather = () => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const [wheather, setWheather] = useState({});
+  const allCat = localStorage.getItem("chosenCategories");
+  const userChosenCategory = allCat.split(",");
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   const getTimeAndDate = () => {
     setDate(getDate());
@@ -50,15 +53,18 @@ const InfoPlusWheather = () => {
           </div>
           <div className="user-info">
             <div className="container">
-              <span className="name">Rishieksh ghosh</span>
-              <span className="email">rishikeshghosh@gmail.com</span>
-              <span className="userName">Rishikeh</span>
+              <span className="name">{userInfo.name}</span>
+              <span className="email">{userInfo.mail}</span>
+              <span className="userName">{userInfo.userName}</span>
             </div>
             <div className="container-cate">
-              <span className="cate">Horror</span>
-              <span className="cate">Thirler</span>
-              <span className="cate">Action</span>
-              <span className="cate">Fiction</span>
+              {userChosenCategory.map((category, i) => {
+                return (
+                  <span key={i} className="cate">
+                    {category}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </div>

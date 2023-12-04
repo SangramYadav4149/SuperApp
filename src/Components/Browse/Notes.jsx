@@ -22,8 +22,6 @@ const Notes = () => {
         <textarea
           value={notes}
           onChange={(e) => handleChange(e)}
-          id="w3review"
-          name="w3review"
           rows="18"
           cols="36"
         />

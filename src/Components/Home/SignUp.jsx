@@ -7,6 +7,8 @@ const SignUp = () => {
   const [mailError, setMailError] = useState(false);
   const [mobileError, setMobileError] = useState(false);
   const [signUpError, setSignUpError] = useState(false);
+  const [agreeError, setAgreeError] = useState(false);
+  const [agree, setAgree] = useState(false);
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [mail, setMail] = useState("");
@@ -16,7 +18,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !userName || !mail || !mobile) {
+    if (!name || !userName || !mail || !mobile || !agree) {
       if (!name) {
         setNameError(true);
       }
@@ -28,6 +30,9 @@ const SignUp = () => {
       }
       if (!mobile) {
         setMobileError(true);
+      }
+      if (!agree) {
+        setAgreeError(true);
       }
     } else {
       const userData = {
@@ -46,6 +51,7 @@ const SignUp = () => {
     setMobileError(false);
     setNameError(false);
     setUserNameError(false);
+    setAgreeError(false);
   };
   return (
     <section className="signUp-wrapper">
@@ -109,9 +115,18 @@ const SignUp = () => {
           </div>
           <div className="form-sec-info flex">
             <div className="check">
-              <input type="checkbox" />
+              <input
+                value={agree}
+                onClick={() => setAgree(!agree)}
+                type="checkbox"
+              />
               <span className="font-small">
                 Share my registration data with superapp
+                <span
+                  className={`${agreeError ? "error-display" : "error-none"}`}
+                >
+                  {agreeError ? "Please agree the terms  & conditions" : null}
+                </span>
               </span>
             </div>
 
