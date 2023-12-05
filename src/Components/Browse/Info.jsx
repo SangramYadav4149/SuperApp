@@ -4,7 +4,6 @@ import img from "../../Assets/profileBig.png";
 const Info = () => {
   const allCat = localStorage.getItem("chosenCategories");
   let userChosenCategory = allCat.split(",");
-
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   return (

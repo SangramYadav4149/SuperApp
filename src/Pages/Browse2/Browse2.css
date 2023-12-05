@@ -16,3 +16,21 @@
 .browse2-container .news {
   margin-left: 2rem;
 }
+.note {
+  margin-left: -18rem;
+}
+.browse2-wrapper > button {
+  width: 20%;
+  display: block;
+  padding: 0.8rem 1rem;
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  cursor: pointer;
+}

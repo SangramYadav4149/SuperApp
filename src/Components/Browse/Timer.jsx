@@ -1,13 +1,23 @@
 import up from "../../Assets/up.png";
 import down from "../../Assets/down.png";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-
+import beepSound from "../../Assets/beep-04.wav";
 import { useState } from "react";
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
+  const [user, setUser] = useState(false);
   const [playing, setPlaying] = useState(false);
+
+  const palyStop = () => {
+    setUser(true);
+    setPlaying(!playing);
+  };
+  if (!playing && user) {
+    new Audio(beepSound).play();
+  }
+
   const increaseSecond = () => {
     if (seconds == 59) {
       return;
@@ -48,6 +58,15 @@ const Timer = () => {
     const seconds = totalSeconds % 60;
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
+    if (seconds === 0 && hours === 0 && minutes == 0) {
+      setUser(false);
+      if (playing) {
+        setPlaying(!playing);
+      }
+      if (user && playing) {
+        new Audio(beepSound).play();
+      }
+    }
 
     return `${hours}:${minutes}:${seconds}`;
   }
@@ -55,12 +74,14 @@ const Timer = () => {
   return (
     <div
       style={{
-        width: "63vw",
+        minWidth: "63vw",
+        maxWidth: "63vw",
         height: "35vh",
         background: "#1E2343",
-        position: "absolute",
+        // position: "absolute",
         borderRadius: "12px",
         marginTop: "6px",
+
         display: "flex",
         boxSizing: "border-box",
         padding: "12px",
@@ -81,7 +102,9 @@ const Timer = () => {
           )}
         </CountdownCircleTimer>
       </div>
-      <div style={{ width: "38vw", height: "14rem", textAlign: "center" }}>
+      <div
+        style={{ maxWidthwidth: "38vw", height: "14rem", textAlign: "center" }}
+      >
         <div
           style={{
             color: "white",
@@ -134,7 +157,7 @@ const Timer = () => {
           </div>
         </div>
         <button
-          onClick={() => setPlaying((prev) => !prev)}
+          onClick={() => palyStop()}
           style={{
             background: "#FF6A6A",
             borderRadius: "20px",

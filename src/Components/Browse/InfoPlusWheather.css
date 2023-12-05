@@ -7,6 +7,26 @@
 .info-wheather-wrapper .info-wrapper {
   width: max-content;
 }
+.info-wheather-wrapper::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.info-wheather-wrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.info-wheather-wrapper::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.info-wheather-wrapper::-webkit-scrollbar-thumb:hover {
+  background: green;
+}
 
 .info-wheather-wrapper .info-container {
   width: 33rem;
@@ -50,6 +70,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  height: 5rem;
 }
 .info-wheather-wrapper .container-cate .cate {
   width: 100%;

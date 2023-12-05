@@ -18,6 +18,7 @@
   scrollbar-shadow-color: #d2691e;
   scrollbar-3dlight-color: #ffebcd;
   scrollbar-darkshadow-color: #8b0000;
+  resize: none;
 }
 textarea::-webkit-scrollbar {
   width: 1rem;

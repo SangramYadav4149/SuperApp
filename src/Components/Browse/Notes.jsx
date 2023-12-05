@@ -24,6 +24,7 @@ const Notes = () => {
           onChange={(e) => handleChange(e)}
           rows="18"
           cols="36"
+          
         />
       </div>
     </section>

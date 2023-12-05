@@ -108,7 +108,7 @@ const Category = () => {
           border: `${
             chosenCategories.includes(id)
               ? "4px solid green"
-              : "4px solid white"
+              : "4px solid black"
           }`,
         }}
         className="map-container"

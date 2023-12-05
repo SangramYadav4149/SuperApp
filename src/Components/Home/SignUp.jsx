@@ -6,7 +6,7 @@ const SignUp = () => {
   const [userNameError, setUserNameError] = useState(false);
   const [mailError, setMailError] = useState(false);
   const [mobileError, setMobileError] = useState(false);
-  const [signUpError, setSignUpError] = useState(false);
+  const [notvalidMail, setNotvalidMail] = useState(false);
   const [agreeError, setAgreeError] = useState(false);
   const [agree, setAgree] = useState(false);
   const [name, setName] = useState("");
@@ -14,6 +14,15 @@ const SignUp = () => {
   const [mail, setMail] = useState("");
   const [mobile, setMobile] = useState("");
   const navigate = useNavigate();
+
+  const mailVarification = (e) => {
+    setMail(e.target.value);
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e.target.value)) {
+      setNotvalidMail(true);
+    } else {
+      setNotvalidMail(false);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +77,7 @@ const SignUp = () => {
               onClick={() => handleResetError()}
               onChange={(e) => setName(e.target.value)}
               value={name}
-              placeholder="name"
+              placeholder="Name"
               type="text"
             />
             <span className={`${nameError ? "error-display" : "error-none"}`}>
@@ -80,7 +89,7 @@ const SignUp = () => {
               onClick={() => handleResetError()}
               onChange={(e) => setUserName(e.target.value)}
               value={userName}
-              placeholder="userName"
+              placeholder="UserName"
               type="text"
             />
             <span
@@ -92,13 +101,19 @@ const SignUp = () => {
           <div className="form-sec">
             <input
               onClick={() => handleResetError()}
-              onChange={(e) => setMail(e.target.value)}
+              onChange={(e) => mailVarification(e)}
               value={mail}
               placeholder="Email"
               type="text"
             />
-            <span className={`${mailError ? "error-display" : "error-none"}`}>
-              {mailError ? "email is required" : null}
+            <span
+              className={`${
+                mailError || notvalidMail ? "error-display" : "error-none"
+              }`}
+            >
+              {mailError && !notvalidMail ? "email is required" : null}
+
+              {notvalidMail ? "Enter a valid mail" : null}
             </span>
           </div>{" "}
           <div className="form-sec">

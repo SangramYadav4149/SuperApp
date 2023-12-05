@@ -14,7 +14,7 @@
 }
 .some-desc {
   width: 20.7rem;
-  height: 4rem;
+  height: 6rem;
   background: white;
   background: linear-gradient(
     to right bottom,
@@ -22,7 +22,6 @@
     rgba(255, 255, 255, 0.2)
   );
   backdrop-filter: blur(1rem);
-
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -32,6 +31,7 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 .news-container .news-time-date {
+  margin-top: 0.5rem;
   width: max-content;
   display: flex;
   column-gap: 0.8rem;
@@ -43,7 +43,8 @@
   background-color: white;
 }
 .news-container .sm-title {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  text-align: center;
 }
 .news-container .news-time {
   font-size: 1.1rem;
@@ -56,6 +57,6 @@
   background-color: white;
   color: black;
   border-radius: 0px 0px 20px 20px;
-  height: 18rem;
+  height: 15.5rem;
   padding: 1rem;
 }
