@@ -7,6 +7,7 @@ const SignUp = () => {
   const [mailError, setMailError] = useState(false);
   const [mobileError, setMobileError] = useState(false);
   const [notvalidMail, setNotvalidMail] = useState(false);
+  const [notvalidMobile, setNotvalidMobile] = useState(false);
   const [agreeError, setAgreeError] = useState(false);
   const [agree, setAgree] = useState(false);
   const [name, setName] = useState("");
@@ -21,6 +22,18 @@ const SignUp = () => {
       setNotvalidMail(true);
     } else {
       setNotvalidMail(false);
+    }
+  };
+  const mobileVarification = (e) => {
+    setMobile(e.target.value);
+    if (
+      !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/.test(
+        e.target.value
+      )
+    ) {
+      setNotvalidMobile(true);
+    } else {
+      setNotvalidMobile(false);
     }
   };
 
@@ -100,9 +113,9 @@ const SignUp = () => {
           </div>{" "}
           <div className="form-sec">
             <input
+              value={mail}
               onClick={() => handleResetError()}
               onChange={(e) => mailVarification(e)}
-              value={mail}
               placeholder="Email"
               type="text"
             />
@@ -113,19 +126,24 @@ const SignUp = () => {
             >
               {mailError && !notvalidMail ? "email is required" : null}
 
-              {notvalidMail ? "Enter a valid mail" : null}
+              {notvalidMail && !mailError ? "Enter a valid mail" : null}
             </span>
           </div>{" "}
           <div className="form-sec">
             <input
               onClick={() => handleResetError()}
-              onChange={(e) => setMobile(e.target.value)}
+              onChange={(e) => mobileVarification(e)}
               value={mobile}
               placeholder="Phone"
               type="number"
             />
-            <span className={`${mobileError ? "error-display" : "error-none"}`}>
-              {mobileError ? "Phone is required" : null}
+            <span
+              className={`${
+                mobileError || notvalidMobile ? "error-display" : "error-none"
+              }`}
+            >
+              {mobileError && !notvalidMail ? "Phone is required" : null}
+              {notvalidMobile ? "Enter a valid mobile Number" : null}
             </span>
           </div>
           <div className="form-sec-info flex">
